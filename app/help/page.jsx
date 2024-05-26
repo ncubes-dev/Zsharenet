@@ -17,9 +17,9 @@ const Help = () => {
     if (navigator.share) {
       try {
         await navigator.share({
-          title: 'Zim past exam papers',
-          text: 'Download Zim past paper App',
-          url: 'https://zimpastexampapers.vercel.app/'
+          title: 'Zsharenet',
+          text: 'Download Zsharenet App',
+          url: 'https://zshare-net.vercel.app/'
         })
         console.log('Sharing was successful')
       } catch (error) {
