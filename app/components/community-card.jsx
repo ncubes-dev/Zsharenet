@@ -1,0 +1,93 @@
+'use client'
+import Image from 'next/image'
+import { useState } from 'react'
+import Link from 'next/link'
+const CommunityCard = props => {
+  const [image, setImage] = useState('')
+  const myLoader = ({ src }) => {
+    return image
+  }
+  return (
+    <div className='flex mx-auto bg-transparent my-1 w-full md:w-1/2  text-center'>
+      <div className='flex flex-col bg-white shadow-lg rounded-lg m-5'>
+        <div className='relative'>
+          <button className='block p-2 px-3 absolute top-0 right-0'>
+            <Image
+              src='/close.png'
+              alt='close'
+              width={30}
+              height={30}
+              className='bg-red p-1 rounded-md'
+            />
+          </button>
+          <Image
+            // src={'image'}
+            src={'/banner.png'}
+            alt='Add'
+            width={1024}
+            height={500}
+            className=' rounded-t-lg'
+          />
+          <p className=' font-normal text-black p-2'>
+            Our mission is to empower students and educators worldwide by
+            providing a comprehensive and accessible repository of past exam
+            papers, fostering a community of collaboration and knowledge
+            sharing.
+          </p>
+          <div className='flex flex-col w-full '>
+            <div className='w-full mx-auto flex flex-row'>
+              <div className=' w-full p-1 flex flex-row'>
+                <Link
+                  // onClick={imageUpload}
+                  href={'#'}
+                  className='focus:outline-none focus:ring focus:ring-darkBlue pl-2
+              focus:bg-darkBlue bg-green w-full text-white p-2 px-3 text-sm
+              rounded-md shadow-lg mb-2'
+                >
+                  WhatsApp
+                </Link>{' '}
+              </div>
+              <div className=' w-full p-1 flex flex-row'>
+                <Link
+                  // onClick={imageUpload}
+                  href={'#'}
+                  className='focus:outline-none focus:ring focus:ring-darkBlue pl-2
+              focus:bg-darkBlue bg-lightBlue w-full text-white p-2 px-3 text-sm
+              rounded-md shadow-lg mb-2'
+                >
+                  Telegram
+                </Link>
+              </div>
+            </div>
+            <div className='w-full mx-auto flex flex-row'>
+              <div className=' w-full p-1 flex flex-row'>
+                <Link
+                  // onClick={imageUpload}
+                  href={'#'}
+                  className='focus:outline-none focus:ring focus:ring-darkBlue pl-2
+              focus:bg-darkBlue bg-black w-full text-white p-2 px-3 text-sm
+              rounded-md shadow-lg mb-2'
+                >
+                  Website
+                </Link>
+              </div>
+              <div className=' w-full p-1 flex flex-row'>
+                <Link
+                  // onClick={imageUpload}
+                  href={'#'}
+                  className='focus:outline-none focus:ring focus:ring-darkBlue pl-2
+              focus:bg-darkBlue bg-red w-full text-white p-2 px-3 text-sm
+              rounded-md shadow-lg mb-2'
+                >
+                  Youtube
+                </Link>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  )
+}
+
+export default CommunityCard
