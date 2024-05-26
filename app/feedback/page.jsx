@@ -58,17 +58,8 @@ const Feedback = () => {
     }
   }
   function timestampToHumanReadable (timestamp) {
-    const date = new Date(timestamp * 1000) // Convert seconds to milliseconds
-    const year = date.getFullYear()
-    const month = date.getMonth() + 1 // Months are zero-based, so add 1
-    const day = date.getDate()
-    const hours = date.getHours()
-    const minutes = date.getMinutes()
-    const seconds = date.getSeconds()
-
-    // Format the date string (adjust as needed)
-    const formattedDate = `${year}-${month}-${day} ${hours}:${minutes}:${seconds}`
-    return formattedDate
+    const date = new Date(timestamp)
+    return date.toDateString()
   }
   async function getDocuments () {
     const customAdsRef = doc(Db, 'customAds', 'customAds')
@@ -109,11 +100,11 @@ const Feedback = () => {
         <div>
           {firebaseFeedbacks.map((f, i) => {
             return (
-              <ul className='divide-y-2'>
-                <div className='bg-white p-2'>
-                  <h1 className='text-startw-full'>{f.message}</h1>
+              <ul className='divide-y divide-gray-200'>
+                <li className='bg-white p-2'>
+                  <h1 className='text-start w-full'>{f.message}</h1>
                   <h1>{timestampToHumanReadable(f.timeStamp)}</h1>
-                </div>
+                </li>
               </ul>
             )
           })}
@@ -159,7 +150,6 @@ const Feedback = () => {
               >
                 {loading ? 'uploading' : 'Submit'}
               </button>
-              <h1>{message}</h1>
             </form>
           </div>
         </div>

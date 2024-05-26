@@ -135,13 +135,15 @@ export const TOPICS = [
   "",
   "Education",
   "Comedy",
+  "Property",
+  "Technology",
   "Sports",
   "Business",
   "News",
   "Vehicles",
   "Health",
   "Agriculture",
-  "Tourism & Property",
-  "Science & Tech"]
+  "Tourism",
+  "Science"]
 
 

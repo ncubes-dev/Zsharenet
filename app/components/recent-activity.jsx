@@ -20,6 +20,7 @@ export const RecentActivity = () => {
   }, [])
 
   const recent = recentActivity === null ? null : CATEGORIES[recentActivity]
+
   return (
     recent !== null && (
       <div>
@@ -28,7 +29,9 @@ export const RecentActivity = () => {
             Favourite
           </h1>
         </div>
-        <ActivityCard index={4} text={recent.text} link={recent.link} />
+        <div className='md:ps-16 md:ml-16'>
+          <ActivityCard index={4} text={recent.text} link={recent.link} />
+        </div>
       </div>
     )
   )

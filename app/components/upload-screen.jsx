@@ -1,6 +1,5 @@
 'use client'
 import Selector from './selector'
-import { dropDownListItemsForSubjects } from '../Utils/utils'
 import { TOPICS } from '../Utils/utils'
 import NotificationProvider from './NotificationProvider'
 import { useState } from 'react'
@@ -82,7 +81,8 @@ const UploadScreen = () => {
         description: description,
         downloadURL: url,
         id: d.id,
-        timeStamp: timeStamp
+        timeStamp: timeStamp,
+        category: category
       })
       setLoading(false)
       setprofileProgress(0)
@@ -200,7 +200,6 @@ const UploadScreen = () => {
               </span>
               <textarea
                 rows={5}
-                items={dropDownListItemsForSubjects}
                 value={description}
                 onChange={event => {
                   setDescription(event.target.value)
