@@ -38,10 +38,15 @@ const Help = () => {
       <div className='flex flex-col md:flex-row md:divide-x-2'>
         <div className='md:w-1/2'>
           <p className=' font-normal text-black p-2'>
-            We're thrilled to have you as a part of our community! Our app, is
-            dedicated to making education more accessible and empowering for
-            everyone. As we strive to maintain and improve our services, we rely
-            on the generosity and support of users like you.
+            We’re excited to welcome you to Zsharenet! Our platform is all about
+            bringing people together, offering a space where you can host and
+            join communities and channels that resonate with your interests.
+            Zsharenet is designed to streamline the way you connect with others,
+            ensuring that everyone can find their niche with ease. As we
+            continue to grow and enhance our services, we’re grateful for the
+            support and enthusiasm of our users – you make it all possible. Join
+            us in creating a vibrant network of diverse communities, where every
+            member can find a place to belong, share, and thrive.
           </p>
           <h1 className=' font-extrabold text-darkBlue text-xl p-2'>
             Donations for Maintenance:
@@ -50,7 +55,7 @@ const Help = () => {
             Running and maintaining our platform requires resources, including
             server costs, development, and ongoing improvements. Your generous
             donations enable us to keep the app running smoothly and ensure that
-            it remains a valuable resource for students and educators alike.
+            it remains a valuable resource for the community and creators alike.
           </p>
           <h1 className=' font-extrabold text-darkBlue text-xl p-2'>
             This is the phone number for donations
@@ -76,16 +81,16 @@ const Help = () => {
             Sharing to Help Others:
           </h1>
           <p className=' font-normal text-black p-2'>
-            One of the most powerful ways you can support us is by spreading the
-            word about our app. Whether it's sharing it with friends,
-            classmates, or on social media, your efforts help more people
-            discover and benefit from the wealth of educational resources
-            available on our platform. By contributing through donations and
-            sharing our app, you're not just supporting us – you're also helping
-            to empower students around the world by providing access to past
-            exam papers and valuable study materials. Thank you for being a part
-            of our journey and for your continued support. Together, we can make
-            a real difference in the world of education.
+            One of the most impactful ways you can support Zsharenet is by
+            spreading the word about our platform. Whether it’s sharing with
+            friends, family, or on social media, your efforts help more people
+            discover and join our vibrant communities. By sharing our app,
+            you’re not just supporting us – you’re also helping to connect
+            individuals around the world with channels that cater to their
+            interests and passions. Thank you for being a part of our journey
+            and for your continued support. Together, we can create a space
+            where everyone can find a community they resonate with and
+            contribute to a diverse network of shared interests and discussions.
           </p>
           <div className='w-full md:p-3'>
             <button

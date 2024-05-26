@@ -13,23 +13,6 @@ const AppBar = () => {
   function handleClick () {
     setIsToggled(!isToggled)
   }
-  const handleShare = async () => {
-    if (navigator.share) {
-      setIsToggled(!isToggled)
-      try {
-        await navigator.share({
-          title: 'Zsharenet',
-          text: 'Download Zsharenet ',
-          url: 'https://zimpastexampapers.vercel.app/'
-        })
-        console.log('Sharing was successful')
-      } catch (error) {
-        console.error('Sharing failed:', error)
-      }
-    } else {
-      console.error('Web Share API is not supported in your browser')
-    }
-  }
 
   return (
     <div className=' bg-mediumBlue relative z-10 mx-auto justify-center '>
@@ -65,7 +48,7 @@ const AppBar = () => {
                 <ul>
                   <Link
                     href={item.link}
-                    onClick={index !== 5 ? handleClick : handleShare}
+                    onClick={handleClick}
                     className='text-white'
                   >
                     <div className='text-center'>{item.text}</div>

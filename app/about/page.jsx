@@ -2,100 +2,59 @@ import React from 'react'
 
 const About = () => {
   return (
-    <div className='p-3 w-full flex flex-col mx-auto min-h-screen'>
-      <h1 className='text-center font-extrabold text-darkBlue text-2xl '>
-        Welcome to
-        <span className='pl-2 text-mediumBlue  text-3xl '>Zim Pastpapers</span>
-        <span className='font-thin'>
-          , the ultimate hosting platform for past exam papers!
-        </span>
-      </h1>
-      <div className='flex flex-col md:flex-row md:divide-x-2'>
-        <div className='md:w-1/2'>
-          <p className=' font-normal text-black p-2'>
-            Our mission is to empower students and educators worldwide by
-            providing a comprehensive and accessible repository of past exam
-            papers, fostering a community of collaboration and knowledge
-            sharing. In today's fast-paced academic landscape, access to quality
-            resources is crucial for success. That's why we created [Your App
-            Name], a platform designed to bridge the gap between students,
-            educators, and institutions. Our goal is to make it easy for users
-            to find, share, and learn from past exam papers, promoting a culture
-            of transparency, accountability, and academic excellence.
+    <div className='flex flex-col items-center justify-center h-auto min-h-screen  bg-backgroundGray'>
+      <div className='w-full max-w-4xl p-2 bg-backgroundGray'>
+        <h1 className='text-2xl font-bold text-center text-gray-800 mb-4'>
+          About Zsharenet
+        </h1>
+        <p className='text-center text-gray-600 mb-6'>
+          Empowering Communities, Connecting People
+        </p>
+        <section className='mb-6'>
+          <h2 className='text-xl font-semibold text-gray-800 mb-2'>
+            Our Mission
+          </h2>
+          <p className='text-gray-600'>
+            Zsharenet is dedicated to creating a digital space where communities
+            thrive and connections are made effortlessly. Our mission is to
+            provide a platform that empowers users to create, manage, and grow
+            their own communities and channels, fostering a network of shared
+            interests and meaningful interactions.
           </p>
-
-          <h1 className=' font-extrabold text-darkBlue text-xl p-2'>
-            With
-            <span className='px-2 text-mediumBlue  text-2xl '>
-              Zim Pastpapers
-            </span>
-            , you can:
-          </h1>
-          <ol className=' font-thin text-darkBlue p-2'>
-            <li>
-              - Explore a vast library of user-uploaded past exam papers,
-              covering a wide range of subjects and institutions
-            </li>
-            <li>
-              - Search, filter, and sort papers by keyword, category, or date
-            </li>
-            <li> - Upload your own past exam papers to share with others</li>
-            <li>
-              - Connect with fellow students and educators, join study groups,
-              and participate in discussions
-            </li>
-            <li>
-              - Access exclusive resources, including study guides, tutorials,
-              and expert advice
-            </li>
-          </ol>
-        </div>
-        <div className='md:w-1/2'>
-          <h1 className=' font-extrabold text-darkBlue text-xl p-2'>
-            Our platform is built on the principles of:
-          </h1>
-          <ol className='font-thin text-darkBlue p-2'>
-            <li>
-              - Collaboration: We believe that knowledge sharing is key to
-              academic success
-            </li>
-            <li>
-              - Accessibility: Everyone deserves equal access to quality
-              resources
-            </li>
-            <li>
-              - Innovation: We strive to stay ahead of the curve, incorporating
-              cutting-edge technology and user-friendly design
-            </li>
-          </ol>
-          <p className='font-normal text-black p-2'>
-            Our team consists of dedicated professionals, passionate about
-            education and committed to delivering an exceptional user
-            experience. We work tirelessly to ensure the platform's stability,
-            security, and continuous improvement.
+        </section>
+        <section className='mb-6'>
+          <h2 className='text-xl font-semibold text-gray-800 mb-2'>
+            Our Story
+          </h2>
+          <p className='text-gray-600'>
+            Born from the idea that everyone should have the ability to bring
+            people together, Zsharenet was created to simplify the process of
+            community building. We believe in the power of unity and the
+            incredible potential that lies in collective collaboration and
+            support.
           </p>
-          <h1 className=' font-extrabold text-darkBlue text-xl p-2'>
-            At{' '}
-            <span className='px-2 text-mediumBlue  text-2xl '>
-              Zim Pastpapers
-            </span>
-            , we value:
-          </h1>
-          <ol className='font-thin text-darkBlue p-2'>
-            <li>
-              - Collaboration: We believe that knowledge sharing is key to
-              academic success
-            </li>
-            <li>
-              - Accessibility: Everyone deserves equal access to quality
-              resources
-            </li>
-            <li>
-              - Innovation: We strive to stay ahead of the curve, incorporating
-              cutting-edge technology and user-friendly design
-            </li>
-          </ol>
-        </div>
+        </section>
+        <section className='mb-6'>
+          <h2 className='text-xl font-semibold text-gray-800 mb-2'>
+            Why Zsharenet?
+          </h2>
+          <p className='text-gray-600'>
+            With Zsharenet, you're not just joining a platform; you're becoming
+            part of a growing family that values each member's voice. Our
+            user-friendly interface, advanced search capabilities, and
+            personalized recommendations ensure that finding and joining
+            communities is a breeze.
+          </p>
+        </section>
+        <section className='mb-6'>
+          <h2 className='text-xl font-semibold text-gray-800 mb-2'>Join Us</h2>
+          <p className='text-gray-600'>
+            Whether you're looking to connect with others who share your
+            passions, or you're ready to lead a community of your own, Zsharenet
+            is your go-to destination. Join us on this journey and be a part of
+            something bigger. Let's build connections that matter.
+          </p>
+        </section>
       </div>
     </div>
   )

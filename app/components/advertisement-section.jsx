@@ -51,14 +51,14 @@ const AdvertisementSection = () => {
     }
   }
 
-  // useEffect(() => {
-  //   async function fetchData () {
-  //     const data = await getDocuments()
-  //     setImage(data.url)
-  //     setAdmin(data.allowedId)
-  //   }
-  //   fetchData()
-  // }, [])
+  useEffect(() => {
+    async function fetchData () {
+      const data = await getDocuments()
+      setImage(data.url)
+      setAdmin(data.allowedId)
+    }
+    fetchData()
+  }, [])
 
   function handleAddClose () {
     console.log('Clicked')
@@ -149,7 +149,6 @@ const AdvertisementSection = () => {
               <div className='rounded-lg p-3'>
                 <Image
                   src={'image'}
-                  // src='/banner.png'
                   loader={myLoader}
                   alt='Add'
                   width={1024}

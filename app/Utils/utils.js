@@ -59,7 +59,7 @@ export const menuItems = [
 
   {
     text: "Share the App",
-    link: "/#"
+    link: "/help"
   },
 
 
