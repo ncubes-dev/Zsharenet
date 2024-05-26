@@ -51,14 +51,14 @@ const AdvertisementSection = () => {
     }
   }
 
-  useEffect(() => {
-    async function fetchData () {
-      const data = await getDocuments()
-      setImage(data.url)
-      setAdmin(data.allowedId)
-    }
-    fetchData()
-  }, [])
+  // useEffect(() => {
+  //   async function fetchData () {
+  //     const data = await getDocuments()
+  //     setImage(data.url)
+  //     setAdmin(data.allowedId)
+  //   }
+  //   fetchData()
+  // }, [])
 
   function handleAddClose () {
     console.log('Clicked')

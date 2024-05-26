@@ -1,17 +1,74 @@
 'use client'
 import { useState, useEffect } from 'react'
-import { collection, addDoc, doc, setDoc } from 'firebase/firestore'
+import NotificationProvider from '../components/NotificationProvider'
+import { toast } from 'react-toastify'
+import {
+  collection,
+  addDoc,
+  doc,
+  setDoc,
+  getDoc,
+  getDocs
+} from 'firebase/firestore'
 import { Db } from '../firebase/config'
 import { FEEDBACK } from '../Utils/utils'
 import { Auth } from '../firebase/config'
 import { useAuthState } from 'react-firebase-hooks/auth'
+
+async function getFeedbacks () {
+  const querySnapshot = await getDocs(collection(Db, FEEDBACK))
+  const data = []
+  querySnapshot.forEach(doc => {
+    data.push({ id: doc.id, ...doc.data() })
+  })
+
+  return data
+}
+
 const Feedback = () => {
+  const [loading, setIsLoading] = useState(false)
   const [message, setMessage] = useState('')
   const [user] = useAuthState(Auth)
   const [admin, setAdmin] = useState('')
-  const [errorMessage, setErrorMessage] = useState('')
+  const [firebaseFeedbacks, setFirebaseFeedbacks] = useState([])
+
   function messageChange (mm) {
     setMessage(mm.target.value)
+  }
+
+  async function uploadDoc () {
+    const timeStamp = Date.now()
+    if (message.length > 1) {
+      try {
+        setIsLoading(true)
+        const d = await addDoc(collection(Db, FEEDBACK), {})
+        await setDoc(doc(Db, FEEDBACK, d.id), {
+          message: message,
+          id: d.id,
+          timeStamp: timeStamp
+        })
+        setMessage('')
+        setIsLoading(false)
+      } catch (e) {
+        setIsLoading(false)
+        toast.error(e)
+      }
+    } else {
+      toast.error('Enter feedback')
+    }
+  }
+  function timestampToHumanReadable (timestamp) {
+    const date = new Date(timestamp * 1000) // Convert seconds to milliseconds
+    const year = date.getFullYear()
+    const month = date.getMonth() + 1 // Months are zero-based, so add 1
+    const day = date.getDate()
+    const hours = date.getHours()
+    const minutes = date.getMinutes()
+    const seconds = date.getSeconds()
+
+    // Format the date string (adjust as needed)
+    const formattedDate = `${year}-${month}-${day} ${hours}:${minutes}:${seconds}`
+    return formattedDate
   }
   async function getDocuments () {
     const customAdsRef = doc(Db, 'customAds', 'customAds')
@@ -29,69 +86,28 @@ const Feedback = () => {
       }
     }
   }
-  async function uploadDoc () {
-    const timeStamp = Date.now()
-    if (message > 1) {
-      try {
-        const d = await addDoc(collection(Db, FEEDBACK), {})
-        await setDoc(doc(Db, FEEDBACK, d.id), {
-          message: message,
-          id: d.id,
-          timeStamp: timeStamp
-        })
-        setMessage('')
-      } catch (e) {
-        setErrorMessage(e)
-      }
-    } else {
-      setErrorMessage('Enter feedback')
+  useEffect(() => {
+    async function fetchData () {
+      const data = await getFeedbacks()
+      setFirebaseFeedbacks(data)
     }
-  }
-  function timestampToHumanReadable (timestamp) {
-    const date = new Date(timestamp * 1000) // Convert seconds to milliseconds
-    const year = date.getFullYear()
-    const month = date.getMonth() + 1 // Months are zero-based, so add 1
-    const day = date.getDate()
-    const hours = date.getHours()
-    const minutes = date.getMinutes()
-    const seconds = date.getSeconds()
+    fetchData()
+  }, [])
 
-    // Format the date string (adjust as needed)
-    const formattedDate = `${year}-${month}-${day} ${hours}:${minutes}:${seconds}`
-    return formattedDate
-  }
   useEffect(() => {
     async function fetchData () {
       const data = await getDocuments()
-      setImage(data.url)
+      // setImage(data.url)
       setAdmin(data.allowedId)
     }
     fetchData()
   }, [])
-  const feedbackList = [
-    {
-      message: 'Great job! Your service exceeded my expectations.',
-      id: 'some_unique_id_1',
-      timeStamp: 1678923456789
-    },
-    {
-      message:
-        'I appreciate the prompt response and excellent customer support.',
-      id: 'some_unique_id_2',
-      timeStamp: 1678923456790
-    },
-    {
-      message: 'The user interface is intuitive and easy to navigate.',
-      id: 'some_unique_id_3',
-      timeStamp: 1678923456791
-    }
-  ]
 
   return (
     <div className='flex flex-col w-full '>
       {user?.uid === admin ? (
         <div>
-          {feedbackList.map((f, i) => {
+          {firebaseFeedbacks.map((f, i) => {
             return (
               <ul className='divide-y-2'>
                 <div className='bg-white p-2'>
@@ -137,20 +153,18 @@ const Feedback = () => {
               </label>
               <button
                 type='button'
+                disabled={loading}
                 onClick={uploadDoc}
                 className='w-full pt-3 mt-3 focus:outline-none focus:ring  bg-mediumBlue text-white hover:bg-darkBlue p-2 px-3 text-sm rounded-lg '
               >
-                {'Submit'}
+                {loading ? 'uploading' : 'Submit'}
               </button>
-              {errorMessage && (
-                <h1 className='text-red text-center text-lg font-extrabold'>
-                  {errorMessage}!
-                </h1>
-              )}
+              <h1>{message}</h1>
             </form>
           </div>
         </div>
       )}
+      <NotificationProvider />
     </div>
   )
 }
