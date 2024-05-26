@@ -5,7 +5,7 @@ import Link from 'next/link'
 const CommunityCard = props => {
   const [image, setImage] = useState('')
   const myLoader = ({ src }) => {
-    return image
+    return 'https://firebasestorage.googleapis.com/v0/b/laundry-first.appspot.com/o/profiles%2Fprofile1716756140868?alt=media&token=3fb2fff8-58fd-45ff-9007-b14a619d60b0'
   }
   return (
     <div className='flex mx-auto bg-transparent my-1 w-full md:w-1/2  text-center'>
@@ -21,25 +21,21 @@ const CommunityCard = props => {
             />
           </button>
           <Image
-            // src={'image'}
-            src={'/banner.png'}
+            src={'image'}
+            loader={myLoader}
             alt='Add'
             width={1024}
             height={500}
             className=' rounded-t-lg'
           />
           <p className=' font-normal text-black p-2'>
-            Our mission is to empower students and educators worldwide by
-            providing a comprehensive and accessible repository of past exam
-            papers, fostering a community of collaboration and knowledge
-            sharing.
+            {props.data.description}
           </p>
           <div className='flex flex-col w-full '>
             <div className='w-full mx-auto flex flex-row'>
               <div className=' w-full p-1 flex flex-row'>
                 <Link
-                  // onClick={imageUpload}
-                  href={'#'}
+                  href={props.data.whatsapp}
                   className='focus:outline-none focus:ring focus:ring-darkBlue pl-2
               focus:bg-darkBlue bg-green w-full text-white p-2 px-3 text-sm
               rounded-md shadow-lg mb-2'
@@ -49,8 +45,7 @@ const CommunityCard = props => {
               </div>
               <div className=' w-full p-1 flex flex-row'>
                 <Link
-                  // onClick={imageUpload}
-                  href={'#'}
+                  href={props.data.telegram}
                   className='focus:outline-none focus:ring focus:ring-darkBlue pl-2
               focus:bg-darkBlue bg-lightBlue w-full text-white p-2 px-3 text-sm
               rounded-md shadow-lg mb-2'
@@ -62,8 +57,7 @@ const CommunityCard = props => {
             <div className='w-full mx-auto flex flex-row'>
               <div className=' w-full p-1 flex flex-row'>
                 <Link
-                  // onClick={imageUpload}
-                  href={'#'}
+                  href={props.data.website}
                   className='focus:outline-none focus:ring focus:ring-darkBlue pl-2
               focus:bg-darkBlue bg-black w-full text-white p-2 px-3 text-sm
               rounded-md shadow-lg mb-2'
@@ -73,8 +67,7 @@ const CommunityCard = props => {
               </div>
               <div className=' w-full p-1 flex flex-row'>
                 <Link
-                  // onClick={imageUpload}
-                  href={'#'}
+                  href={props.data.youtube}
                   className='focus:outline-none focus:ring focus:ring-darkBlue pl-2
               focus:bg-darkBlue bg-red w-full text-white p-2 px-3 text-sm
               rounded-md shadow-lg mb-2'

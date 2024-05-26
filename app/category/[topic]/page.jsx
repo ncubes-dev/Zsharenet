@@ -2,12 +2,12 @@
 import { useParams } from 'next/navigation'
 import CommunityCard from '@/app/components/community-card'
 import { useState, useEffect } from 'react'
-import { collection, getDocs } from 'firebase/firestore'
+import { collection, getDocs, query, where } from 'firebase/firestore'
 import { COMMUNITY } from '@/app/Utils/utils'
 import { Db } from '@/app/firebase/config'
 import Link from 'next/link'
 
-async function getFirebasePapers (category) {
+async function getcommunities (category) {
   const q = query(collection(Db, COMMUNITY), where('category', '==', category))
 
   const querySnapshot = await getDocs(q)
@@ -19,18 +19,13 @@ async function getFirebasePapers (category) {
   return data
 }
 
-const citiesRef = collection(db, 'cities')
-
-// Create a query against the collection.
-const q = query(citiesRef, where('state', '==', 'CA'))
-
 const Topic = () => {
-  const topic = useParams().topic.slice(1)
-  const [firebasePapers, setFirebasePapers] = useState([])
+  const topic = useParams().topic
+  const [communities, setCommunities] = useState([])
   useEffect(() => {
     async function fetchData () {
-      const data = await getFirebasePapers(topic)
-      setFirebasePapers(data)
+      const data = await getcommunities(topic)
+      setCommunities(data)
     }
     fetchData()
   }, [])
@@ -47,12 +42,12 @@ const Topic = () => {
         </Link>
       </div>
 
-      {firebasePapers.length === 0 ? (
+      {communities.length === 0 ? (
         <div className='items-center flex flex-row bg-veryLightBlue p-3 w-full h-1/3 container mx-auto justify-between'>
-          <h1>There are no communities here yet! {topic}</h1>
+          <h1>There are no communities here yet!</h1>
         </div>
       ) : (
-        firebasePapers.map((paper, index) => {
+        communities.map((paper, index) => {
           return <CommunityCard data={paper} />
         })
       )}
