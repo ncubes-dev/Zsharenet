@@ -84,7 +84,7 @@ export const CATEGORIES = [
   },
   {
     text: "Sports",
-    link: "/sports",
+    link: "/sport",
   },
   {
     text: "Business",
@@ -100,7 +100,7 @@ export const CATEGORIES = [
   },
   {
     text: "Vehicles",
-    link: "/vehicles",
+    link: "/vehicle",
   },
   {
     text: "Health",
@@ -111,11 +111,19 @@ export const CATEGORIES = [
     link: "/agriculture",
   },
   {
-    text: "Tourism & Property",
+    text: "Tourism",
     link: "/tourism",
   },
   {
-    text: "Science & Tech",
+    text: "Technology",
+    link: "/technology",
+  },
+  {
+    text: "Property",
+    link: "/property",
+  },
+  {
+    text: "Science",
     link: "/science",
   }
 

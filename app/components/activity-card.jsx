@@ -19,10 +19,8 @@ export const ActivityCard = props => {
               className='p-3'
               width={512}
               height={512}
-              src={'/biology.png'}
-              // src={`${props.data.link}.png`}
+              src={`${props.link}.png`}
               alt={props.text}
-              // alt={'hhhh
             />
           </div>
           <h1 className='font-bold text-mediumBlue text-xl text-center'>
