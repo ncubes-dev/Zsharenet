@@ -5,7 +5,7 @@ import Link from 'next/link'
 const CommunityCard = props => {
   const [image, setImage] = useState('')
   const myLoader = ({ src }) => {
-    return 'https://firebasestorage.googleapis.com/v0/b/laundry-first.appspot.com/o/profiles%2Fprofile1716756140868?alt=media&token=3fb2fff8-58fd-45ff-9007-b14a619d60b0'
+    return props.data.downloadURL
   }
   return (
     <div className='flex mx-auto bg-transparent my-1 w-full md:w-1/2  text-center'>
