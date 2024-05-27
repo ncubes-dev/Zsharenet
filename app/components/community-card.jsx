@@ -47,7 +47,7 @@ const CommunityCard = props => {
               <Image
                 onClick={() => {}}
                 src='/edit.png'
-                alt='close'
+                alt='edit'
                 width={40}
                 height={40}
                 className=' p-2 rounded-full bg-white'
@@ -57,7 +57,7 @@ const CommunityCard = props => {
               <Image
                 onClick={() => {}}
                 src='/delete.png'
-                alt='close'
+                alt='delete'
                 width={40}
                 height={40}
               />{' '}
