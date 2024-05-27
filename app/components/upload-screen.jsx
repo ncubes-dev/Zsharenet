@@ -112,16 +112,9 @@ const UploadScreen = () => {
     } else {
       setLoading(true)
       const timeStamp = Date.now()
-      const metadata = {
-        contentType: 'application/pdf'
-      }
       const profilePdfRef = ref(Storage, `profiles/profile${timeStamp}`)
 
-      const uploadTask = uploadBytesResumable(
-        profilePdfRef,
-        profilePdfLink,
-        metadata
-      )
+      const uploadTask = uploadBytesResumable(profilePdfRef, profilePdfLink)
 
       uploadTask.on(
         'state_changed',
