@@ -1,14 +1,10 @@
-data class LocationCacheInfo(
-        var answerLocalUrl: String,
-        var questionLocalUrl: String,
-)
-
 /*
 fix help page text and the link to be shared and restrategize on the selling point
 fixe all text pages
 implement communities read
 search feature
 recent activity
+the owner must be able to edit and delete them {use id and auth}
  */
 
  /*Building an app that facilitates the hosting of communities and channels is a fantastic idea, especially in today's digital landscape where users are seeking more authentic spaces to connect and share interests. Here are some key features and considerations you might want to include in your app:

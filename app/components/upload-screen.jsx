@@ -10,8 +10,12 @@ import { Storage } from '../firebase/config'
 import { Db } from '../firebase/config'
 import { COMMUNITY } from '../Utils/utils'
 import { Input } from './input'
+import { Auth } from '../firebase/config'
+import { useAuthState } from 'react-firebase-hooks/auth'
 
 const UploadScreen = () => {
+  const [user] = useAuthState(Auth)
+  const [admin, setAdmin] = useState('')
   const [loading, setLoading] = useState(false)
   const [profileProgress, setprofileProgress] = useState(0)
   const [website, setWebsite] = useState('')
@@ -82,7 +86,8 @@ const UploadScreen = () => {
         downloadURL: url,
         id: d.id,
         timeStamp: timeStamp,
-        category: category
+        category: category,
+        userId: user?.uid
       })
       setLoading(false)
       setprofileProgress(0)

@@ -88,7 +88,6 @@ const Feedback = () => {
   useEffect(() => {
     async function fetchData () {
       const data = await getDocuments()
-      // setImage(data.url)
       setAdmin(data.allowedId)
     }
     fetchData()
