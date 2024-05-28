@@ -8,10 +8,14 @@ import { Auth, Db } from '../firebase/config'
 import { useAuthState } from 'react-firebase-hooks/auth'
 import { doc, deleteDoc, getDoc } from 'firebase/firestore'
 import { COMMUNITY } from '../Utils/utils'
+import { Storage } from '../firebase/config'
+import { ref, deleteObject } from 'firebase/storage'
+import { useRouter } from 'next/navigation'
 
 const CommunityCard = props => {
   const [user] = useAuthState(Auth)
   const [admin, setAdmin] = useState('')
+  const router = useRouter()
   async function getDocuments () {
     const customAdsRef = doc(Db, 'customAds', 'customAds')
     try {
@@ -27,6 +31,16 @@ const CommunityCard = props => {
         allowedId: ''
       }
     }
+  }
+  async function deleteCommunity () {
+    const desertRef = ref(Storage, props.data.imageName)
+    deleteObject(desertRef)
+      .then(() => {
+        deleteDocument()
+      })
+      .catch(error => {
+        toast.error(error)
+      })
   }
 
   useEffect(() => {
@@ -51,7 +65,9 @@ const CommunityCard = props => {
             <div className=' p-2 px-3 absolute top-0 right-0 flex flex-row'>
               <div className='p-2 rounded-full bg-white'>
                 <Image
-                  onClick={() => {}}
+                  onClick={() => {
+                    router.push(`/edit/${props.data.id}`)
+                  }}
                   src='/edit.png'
                   alt='edit'
                   width={40}
@@ -61,7 +77,7 @@ const CommunityCard = props => {
               </div>
               <div className='p-2 rounded-full bg-white'>
                 <Image
-                  onClick={deleteDocument}
+                  onClick={deleteCommunity}
                   src='/delete.png'
                   alt='delete'
                   width={40}
@@ -102,17 +118,17 @@ const CommunityCard = props => {
               </div>
               <div className=' w-full p-1 flex flex-row'>
                 <Link
-                  href={props.data.telegram}
+                  href={props.data.youtube}
                   onClick={() => {
-                    if (props.data.telegram === '') {
+                    if (props.data.youtube === '') {
                       toast.error('Unavailable')
                     }
                   }}
                   className='focus:outline-none focus:ring focus:ring-darkBlue pl-2
-              focus:bg-darkBlue bg-lightBlue w-full text-white p-2 px-3 text-sm
+              focus:bg-darkBlue bg-red w-full text-white p-2 px-3 text-sm
               rounded-md shadow-lg mb-2'
                 >
-                  Other
+                  Youtube
                 </Link>
               </div>
             </div>
@@ -134,17 +150,17 @@ const CommunityCard = props => {
               </div>
               <div className=' w-full p-1 flex flex-row'>
                 <Link
-                  href={props.data.youtube}
+                  href={props.data.telegram}
                   onClick={() => {
-                    if (props.data.youtube === '') {
+                    if (props.data.telegram === '') {
                       toast.error('Unavailable')
                     }
                   }}
                   className='focus:outline-none focus:ring focus:ring-darkBlue pl-2
-              focus:bg-darkBlue bg-red w-full text-white p-2 px-3 text-sm
+              focus:bg-darkBlue bg-lightBlue w-full text-white p-2 px-3 text-sm
               rounded-md shadow-lg mb-2'
                 >
-                  Youtube
+                  Other
                 </Link>
               </div>
             </div>

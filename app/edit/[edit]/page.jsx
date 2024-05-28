@@ -1,21 +1,22 @@
 'use client'
 import Selector from './selector'
-import { TOPICS } from '../Utils/utils'
+import { TOPICS } from '../../Utils/utils'
 import NotificationProvider from './NotificationProvider'
 import { useState } from 'react'
 import { toast } from 'react-toastify'
 import { ref, uploadBytesResumable, getDownloadURL } from 'firebase/storage'
 import { collection, addDoc, doc, setDoc } from 'firebase/firestore'
-import { Storage } from '../firebase/config'
-import { Db } from '../firebase/config'
-import { COMMUNITY } from '../Utils/utils'
+import { Storage } from '../../firebase/config'
+import { Db } from '../../firebase/config'
+import { COMMUNITY } from '../../Utils/utils'
 import { Input } from './input'
-import { Auth } from '../firebase/config'
+import { Auth } from '../../firebase/config'
 import { useAuthState } from 'react-firebase-hooks/auth'
 import { useRouter } from 'next/navigation'
 import TextWithShowMore from './text-with-showmore'
 
-const UploadScreen = () => {
+const EditScreen = () => {
+  const id = useParams().id
   const [user] = useAuthState(Auth)
   const [loading, setLoading] = useState(false)
   const [profileProgress, setprofileProgress] = useState(0)
@@ -75,7 +76,7 @@ const UploadScreen = () => {
     }
   }
 
-  async function uploadDoc (url, name) {
+  async function uploadDoc (url) {
     const timeStamp = Date.now()
     if (url.length > 1) {
       const d = await addDoc(collection(Db, COMMUNITY), {})
@@ -89,8 +90,7 @@ const UploadScreen = () => {
         id: d.id,
         timeStamp: timeStamp,
         category: category,
-        userId: user?.uid,
-        imageName: name
+        userId: user?.uid
       })
       setLoading(false)
       setprofileProgress(0)
@@ -139,7 +139,7 @@ const UploadScreen = () => {
         },
         () => {
           getDownloadURL(uploadTask.snapshot.ref).then(downloadURL => {
-            uploadDoc(downloadURL, `profiles/profile${timeStamp}`)
+            uploadDoc(downloadURL)
           })
         }
       )
@@ -151,20 +151,8 @@ const UploadScreen = () => {
       <div className='flex flex-col mt-2 pt-5  md:mt-10'>
         <div className='flex flex-col justify-center'>
           <h1 className='font-bold text-mediumBlue text-3xl md:text-4xl text-center '>
-            Community details
+            Edit Community details
           </h1>
-          <p className='px-3 text-darkBlue '>
-            Here you enter the details of the community you want to upload.
-            Links are are links to you cummunity either{' '}
-            <span className='text-darkBlue font-semibold'>
-              e.g whatsapp group link.
-            </span>{' '}
-            for other you can add a link for any platform like{' '}
-            <span className='text-darkBlue font-semibold'>
-              {' '}
-              instagram or facebook any other{' '}
-            </span>
-          </p>
         </div>
       </div>
       <div className='container mx-auto justify-center p-2 mt-4 flex flex-col w-full '>
@@ -307,4 +295,4 @@ const UploadScreen = () => {
   )
 }
 
-export default UploadScreen
+export default EditScreen

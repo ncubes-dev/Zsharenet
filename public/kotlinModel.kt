@@ -4,7 +4,8 @@ fixe all text pages
 implement communities read
 search feature
 recent activity
-the owner must be able to edit and delete them {use id and auth}
+my delete does not affect the image
+i am navigating to an edit page, hoew do i handle passing an object with nav
 page labelled the
 whatsapp group expire
 robut nav and nav delays, error and loading

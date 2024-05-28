@@ -13,7 +13,7 @@ export const Activities = props => {
         </h1>
       </div>
       <div className='flex flex-wrap container mx-auto w-full  '>
-        <p className='px-3 text-darkBlue font-bold '>
+        <p className='px-3 text-darkBlue font-semibold '>
           Here you can add your community{' '}
           <span className='text-darkBlue italic font-normal'>
             (whatsapp group, whatsapp channel, telegram group, telegram channel,
@@ -37,7 +37,7 @@ export const Activities = props => {
       <div className='flex flex-wrap container mx-auto w-full  '>
         <p className='px-3 text-darkBlue font-normal '>
           Here you can find a various communities from different{' '}
-          <span className='text-darkBlue italic font-bold'>categories</span>
+          <span className='text-darkBlue italic font-semibold'>categories</span>
         </p>
         {CATEGORIES.map((category, index) => {
           return (
