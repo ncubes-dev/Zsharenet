@@ -12,10 +12,10 @@ import { COMMUNITY } from '../Utils/utils'
 import { Input } from './input'
 import { Auth } from '../firebase/config'
 import { useAuthState } from 'react-firebase-hooks/auth'
+import { useRouter } from 'next/navigation'
 
 const UploadScreen = () => {
   const [user] = useAuthState(Auth)
-  const [admin, setAdmin] = useState('')
   const [loading, setLoading] = useState(false)
   const [profileProgress, setprofileProgress] = useState(0)
   const [website, setWebsite] = useState('')
@@ -25,6 +25,7 @@ const UploadScreen = () => {
   const [telegram, setTelegram] = useState('')
   const [description, setDescription] = useState('')
   const [profilePdfLink, setProfilePdfLink] = useState(null)
+  const router = useRouter()
 
   const compulsory = [
     {
@@ -91,14 +92,16 @@ const UploadScreen = () => {
       })
       setLoading(false)
       setprofileProgress(0)
-      setWebsite('')
+      toast.success(`Upload Successfully`)
+      //navigate to the particular category
+      router.push(`/category/${category}`)
       setWhatsapp('')
       setCategory('')
       setYoutube('')
       setTelegram('')
       setDescription('')
+      setWebsite('')
       setProfilePdfLink(null)
-      toast.success(`Upload Successfully`)
     } else {
       setLoading(false)
       toast.error(`Error occured`)
@@ -231,7 +234,7 @@ const UploadScreen = () => {
           <label class='block '>
             <div className='w-full flex flex-col md:flex-row md:justify-between md:items-center '>
               <span class='pl-1 font-bold text-mediumBlue text-xl'>
-                Telegram Link
+                Other Link
               </span>
               <Input
                 value={telegram}

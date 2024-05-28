@@ -33,13 +33,10 @@ const Topic = () => {
   return (
     <div className='flex flex-wrap container mx-auto w-full '>
       <div className='items-center flex flex-row bg-veryLightBlue p-3 w-full h-1/3 container mx-auto justify-between'>
-        <h1>Upload your community</h1>
-        <Link
-          className='bg-mediumBlue p-2 px-3 rounded-lg text-white'
-          href={'/upload'}
-        >
-          Upload
-        </Link>
+        <h1 className=' font-extrabold text-xl md:text-2xl text-darkBlue text-center w-full'>
+          {' '}
+          Welcome to {topic} category!
+        </h1>
       </div>
 
       {communities.length === 0 ? (

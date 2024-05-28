@@ -153,7 +153,7 @@ const AdvertisementSection = () => {
                   alt='Add'
                   width={1024}
                   height={500}
-                  className='rounded-lg'
+                  className='rounded-md'
                 />
               </div>
             </div>

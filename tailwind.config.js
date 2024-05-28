@@ -33,8 +33,8 @@ module.exports = {
         green: "rgb(18, 117, 97)",
         red: "rgb(220 ,38 ,38 )",
         gray: "rgb(203, 203, 203)",
-        backgroundGray: "rgb(228, 197, 158)",
-        // backgroundGray: "rgb(18, 117, 97, 0.5)",
+        backgroundGray: "rgb(228, 197, 158 ,0.5)",
+        // backgroundGray: "rgb(255, 255, 255, 1)",
 
         black: "rgb(0,0,0)",
         white: "rgb(255,255,255)"

@@ -6,6 +6,7 @@ import NotificationProvider from './NotificationProvider'
 import { toast } from 'react-toastify'
 import { Auth } from '../firebase/config'
 import { useAuthState } from 'react-firebase-hooks/auth'
+import { doc, getDoc } from 'firebase/firestore'
 
 const CommunityCard = props => {
   const [user] = useAuthState(Auth)
@@ -42,27 +43,29 @@ const CommunityCard = props => {
     <div className='flex mx-auto bg-transparent my-1 w-full md:w-1/2  text-center'>
       <div className='flex flex-col bg-white shadow-lg rounded-lg m-5'>
         <div className='relative'>
-          <div className=' p-2 px-3 absolute top-0 right-0 flex flex-row'>
-            <div className='p-2 rounded-full bg-white'>
-              <Image
-                onClick={() => {}}
-                src='/edit.png'
-                alt='edit'
-                width={40}
-                height={40}
-                className=' p-2 rounded-full bg-white'
-              />
+          {user?.uid === admin && (
+            <div className=' p-2 px-3 absolute top-0 right-0 flex flex-row'>
+              <div className='p-2 rounded-full bg-white'>
+                <Image
+                  onClick={() => {}}
+                  src='/edit.png'
+                  alt='edit'
+                  width={40}
+                  height={40}
+                  className=' p-2 rounded-full bg-white'
+                />
+              </div>
+              <div className='p-2 rounded-full bg-white'>
+                <Image
+                  onClick={() => {}}
+                  src='/delete.png'
+                  alt='delete'
+                  width={40}
+                  height={40}
+                />{' '}
+              </div>
             </div>
-            <div className='p-2 rounded-full bg-white'>
-              <Image
-                onClick={() => {}}
-                src='/delete.png'
-                alt='delete'
-                width={40}
-                height={40}
-              />{' '}
-            </div>
-          </div>
+          )}
           <Image
             src={'image'}
             loader={myLoader}
@@ -103,7 +106,7 @@ const CommunityCard = props => {
               focus:bg-darkBlue bg-lightBlue w-full text-white p-2 px-3 text-sm
               rounded-md shadow-lg mb-2'
                 >
-                  Telegram
+                  Other
                 </Link>
               </div>
             </div>
