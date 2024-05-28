@@ -7,6 +7,7 @@ recent activity
 the owner must be able to edit and delete them {use id and auth}
 page labelled the
 whatsapp group expire
+robut nav and nav delays, error and loading
  */
 
  /*Building an app that facilitates the hosting of communities and channels is a fantastic idea, especially in today's digital landscape where users are seeking more authentic spaces to connect and share interests. Here are some key features and considerations you might want to include in your app:

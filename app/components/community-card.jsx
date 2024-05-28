@@ -4,9 +4,10 @@ import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import NotificationProvider from './NotificationProvider'
 import { toast } from 'react-toastify'
-import { Auth } from '../firebase/config'
+import { Auth, Db } from '../firebase/config'
 import { useAuthState } from 'react-firebase-hooks/auth'
-import { doc, getDoc } from 'firebase/firestore'
+import { doc, deleteDoc, getDoc } from 'firebase/firestore'
+import { COMMUNITY } from '../Utils/utils'
 
 const CommunityCard = props => {
   const [user] = useAuthState(Auth)
@@ -39,11 +40,14 @@ const CommunityCard = props => {
   const myLoader = ({ src }) => {
     return props.data.downloadURL
   }
+  async function deleteDocument () {
+    await deleteDoc(doc(Db, COMMUNITY, props.data.id))
+  }
   return (
     <div className='flex mx-auto bg-transparent my-1 w-full md:w-1/2  text-center'>
       <div className='flex flex-col bg-white shadow-lg rounded-lg m-5'>
         <div className='relative'>
-          {user?.uid === admin && (
+          {user?.uid === admin ? (
             <div className=' p-2 px-3 absolute top-0 right-0 flex flex-row'>
               <div className='p-2 rounded-full bg-white'>
                 <Image
@@ -57,7 +61,7 @@ const CommunityCard = props => {
               </div>
               <div className='p-2 rounded-full bg-white'>
                 <Image
-                  onClick={() => {}}
+                  onClick={deleteDocument}
                   src='/delete.png'
                   alt='delete'
                   width={40}
@@ -65,6 +69,8 @@ const CommunityCard = props => {
                 />{' '}
               </div>
             </div>
+          ) : (
+            <></>
           )}
           <Image
             src={'image'}
