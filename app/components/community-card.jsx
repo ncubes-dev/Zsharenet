@@ -32,6 +32,7 @@ const CommunityCard = props => {
       }
     }
   }
+  //need work ui update on delete does work
   async function deleteCommunity () {
     const desertRef = ref(Storage, props.data.imageName)
     deleteObject(desertRef)
@@ -56,18 +57,26 @@ const CommunityCard = props => {
   }
   async function deleteDocument () {
     await deleteDoc(doc(Db, COMMUNITY, props.data.id))
+    router.refresh()
   }
+
+  async function editCommunity () {
+    sessionStorage.setItem('obj', JSON.stringify(props.data))
+    router.push(`/edit/${props.data.id}`)
+  }
+
   return (
     <div className='flex mx-auto bg-transparent my-1 w-full md:w-1/2  text-center'>
       <div className='flex flex-col bg-white shadow-lg rounded-lg m-5'>
         <div className='relative'>
           {user?.uid === admin ? (
             <div className=' p-2 px-3 absolute top-0 right-0 flex flex-row'>
-              <div className='p-2 rounded-full bg-white'>
+              <div
+                className='p-2 rounded-full bg-white'
+                // href={`/edit/${props.data.id}`}
+              >
                 <Image
-                  onClick={() => {
-                    router.push(`/edit/${props.data.id}`)
-                  }}
+                  onClick={editCommunity}
                   src='/edit.png'
                   alt='edit'
                   width={40}
