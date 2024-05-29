@@ -11,7 +11,7 @@ const privacypolicy = () => {
           Privacy Policy for Zsharenet
         </h1>
         <p className='text-center text-gray-600 mb-6'>
-          Last updated: [Insert Date]
+          Last updated: [{date}]
         </p>
         <section className='mb-6'>
           <h2 className='text-xl font-semibold text-gray-800 mb-2'>
