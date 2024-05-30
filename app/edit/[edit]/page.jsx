@@ -2,7 +2,7 @@
 import Selector from '@/app/components/selector'
 import { TOPICS } from '../../Utils/utils'
 import NotificationProvider from '@/app/components/NotificationProvider'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { toast } from 'react-toastify'
 import { ref, uploadBytesResumable, getDownloadURL } from 'firebase/storage'
 import { doc, updateDoc } from 'firebase/firestore'
@@ -14,17 +14,34 @@ import { useRouter } from 'next/navigation'
 import TextWithShowMore from '@/app/components/text-with-showmore'
 
 const EditScreen = () => {
-  const community = JSON.parse(sessionStorage.getItem('obj'))
-  const [loading, setLoading] = useState(false)
+  // const community = JSON.parse(sessionStorage.getItem('obj'))
+
+  const [community, setCommunity] = useState(null)
+  const [loading, setLoading] = useState(null)
   const [profileProgress, setprofileProgress] = useState(0)
-  const [website, setWebsite] = useState(community.website)
-  const [whatsapp, setWhatsapp] = useState(community.whatsapp)
-  const [category, setCategory] = useState(community.category)
-  const [youtube, setYoutube] = useState(community.youtube)
-  const [telegram, setTelegram] = useState(community.telegram)
-  const [description, setDescription] = useState(community.description)
+  const [website, setWebsite] = useState('')
+  const [whatsapp, setWhatsapp] = useState('')
+  const [category, setCategory] = useState('')
+  const [youtube, setYoutube] = useState('')
+  const [telegram, setTelegram] = useState('')
+  const [description, setDescription] = useState('')
   const [profilePdfLink, setProfilePdfLink] = useState(null)
   const router = useRouter()
+
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      const storedData = sessionStorage.getItem('obj')
+      if (storedData) {
+        setCommunity(JSON.parse(storedData))
+        setWebsite(JSON.parse(storedData).website)
+        setWhatsapp(JSON.parse(storedData).whatsapp)
+        setCategory(JSON.parse(storedData).category)
+        setYoutube(JSON.parse(storedData).youtube)
+        setTelegram(JSON.parse(storedData).telegram)
+        setDescription(JSON.parse(storedData).description)
+      }
+    }
+  }, [])
 
   const compulsory = [
     {
