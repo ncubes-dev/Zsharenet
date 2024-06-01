@@ -7,9 +7,10 @@ import { signOut } from 'firebase/auth'
 import { Auth } from '../firebase/config'
 import { useAuthState } from 'react-firebase-hooks/auth'
 
-const AppBar = () => {
+const AppBar = props => {
   const [user] = useAuthState(Auth)
   const [isToggled, setIsToggled] = useState(false)
+
   function handleClick () {
     setIsToggled(!isToggled)
   }
@@ -39,6 +40,15 @@ const AppBar = () => {
           />
         </div>
         <div className='flex flex-row space-x-1 items-center'>
+          <button onClick={props.toggleDarkMode} className='block p-2 px-3 '>
+            <Image
+              src={props.darkMode ? '/sun.png' : '/moon.png'}
+              alt={props.darkMode ? 'light mode' : 'dark mode'}
+              width={30}
+              height={30}
+              className='bg-veryLightBlue p-1 rounded-md'
+            />
+          </button>
           <button onClick={handleClick} className='block p-2 px-3 '>
             <Image
               src={isToggled ? '/close.png' : '/menu.png'}
