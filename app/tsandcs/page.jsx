@@ -95,7 +95,7 @@ const tsandcs = () => {
           </h2>
           <p className='text-black dark:text-white'>
             This Agreement shall be governed and construed in accordance with
-            the laws of [Insert Country], without regard to its conflict of law
+            the laws of Zimbabwe, without regard to its conflict of law
             provisions.
           </p>
         </section>
