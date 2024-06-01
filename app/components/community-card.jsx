@@ -151,7 +151,7 @@ const CommunityCard = props => {
                     }
                   }}
                   className='focus:outline-none focus:ring focus:ring-darkBlue pl-2
-              focus:bg-darkBlue bg-black w-full  text-black dark:text-white p-2 px-3 text-sm
+              focus:bg-darkBlue bg-black w-full  text-white p-2 px-3 text-sm
               rounded-md shadow-lg mb-2'
                 >
                   Website

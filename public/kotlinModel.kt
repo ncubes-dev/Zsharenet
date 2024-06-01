@@ -2,7 +2,7 @@
 
 use the suspense
 handle offline and caching
-robut nav and nav delays, error and loading
+robust nav and nav delays, error and loading
 
  */
 
