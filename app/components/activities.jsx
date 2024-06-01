@@ -29,16 +29,10 @@ export const Activities = props => {
           upload your community
         </Link>
       </div>
-      <div className='flex flex-col p-3 md:ms-32 justify-start'>
-        <h1 className=' font-extrabold text-xl md:text-2xl  text-black dark:text-white text-start'>
+      <div className='container items-center mx-auto flex flex-row p-3 justify-between'>
+        <h1 className=' font-extrabold text-xl md:text-2xl  text-black dark:text-white'>
           Categories
         </h1>
-        <p className=' text-start text-black dark:text-white font-normal '>
-          Here you can find a various communities from different{' '}
-          <span className=' text-black dark:text-white italic font-semibold'>
-            categories
-          </span>
-        </p>
       </div>
       <div className='flex flex-wrap container mx-auto w-full  '>
         {CATEGORIES.map((category, index) => {

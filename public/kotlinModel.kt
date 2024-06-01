@@ -4,7 +4,7 @@ use the suspense
 fix category layout
 handle offline and caching
 robust nav and nav delays, error and loading
-bring back light mode
+
 
  */
 
