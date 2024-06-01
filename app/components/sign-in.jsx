@@ -114,7 +114,7 @@ const SignIn = () => {
           <button
             type='button'
             onClick={handleLoginOrSignIn}
-            className='text-white mt-3 h-auto block w-full px-3 py-2 border border-slate-300 rounded-md text-sm shadow-sm bg-mediumBlue focus:bg-darkBlue'
+            className='text-white  dark:bg-black mt-3 h-auto block w-full px-3 py-2 border border-slate-300 rounded-md text-sm shadow-sm bg-mediumBlue focus:bg-darkBlue'
           >
             {!loading ? 'SignIn' : 'Loading'}
           </button>

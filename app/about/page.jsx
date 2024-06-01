@@ -2,8 +2,8 @@ import React from 'react'
 
 const About = () => {
   return (
-    <div className='flex flex-col items-center justify-center h-auto min-h-screen  bg-backgroundGray'>
-      <div className='w-full max-w-4xl p-2 bg-backgroundGray'>
+    <div className='flex flex-col items-center justify-center p-4  h-auto min-h-screen bg-backgroundGray dark:bg-backgroundDark'>
+      <div className='w-full max-w-4xl p-8 bg-white dark:bg-lightDark rounded-lg shadow-md'>
         <h1 className='text-2xl font-bold text-center text-gray-800 mb-4'>
           About Zsharenet
         </h1>

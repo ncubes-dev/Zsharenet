@@ -145,7 +145,7 @@ const Feedback = () => {
                 type='button'
                 disabled={loading}
                 onClick={uploadDoc}
-                className='w-full pt-3 mt-3 focus:outline-none focus:ring  bg-mediumBlue text-white hover:bg-darkBlue p-2 px-3 text-sm rounded-lg '
+                className=' dark:bg-black w-full pt-3 mt-3 focus:outline-none focus:ring  bg-mediumBlue text-white hover:bg-darkBlue p-2 px-3 text-sm rounded-lg '
               >
                 {loading ? 'uploading' : 'Submit'}
               </button>

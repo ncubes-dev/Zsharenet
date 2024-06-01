@@ -288,7 +288,7 @@ const UploadScreen = () => {
             type='button'
             disabled={loading ? true : false}
             onClick={handleClick}
-            className=' focus:outline-none md:hidden mt-4 focus:ring focus:ring-darkBlue focus:bg-darkBlue bg-mediumBlue md:w-32 w-full text-white p-2 px-3 text-sm rounded-md '
+            className=' focus:outline-none md:hidden mt-4 focus:ring focus:ring-darkBlue focus:bg-darkBlue bg-mediumBlue  dark:bg-black md:w-32 w-full text-white p-2 px-3 text-sm rounded-md '
           >
             {loading ? 'Uploading' : 'Upload'}
           </button>
@@ -299,7 +299,7 @@ const UploadScreen = () => {
         type='button'
         disabled={loading ? true : false}
         onClick={handleClick}
-        className=' focus:outline-none hidden md:block focus:ring focus:ring-darkBlue focus:bg-darkBlue bg-mediumBlue md:w-32 w-full text-white p-2 px-3 text-sm rounded-md '
+        className=' focus:outline-none hidden md:block focus:ring focus:ring-darkBlue focus:bg-darkBlue bg-mediumBlue dark:bg-black md:w-32 w-full text-white p-2 px-3 text-sm rounded-md '
       >
         {loading ? 'Uploading' : 'Upload'}
       </button>

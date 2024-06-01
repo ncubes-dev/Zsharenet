@@ -308,7 +308,7 @@ const EditScreen = () => {
             type='button'
             disabled={loading ? true : false}
             onClick={handleClick}
-            className=' focus:outline-none hidden md:block focus:ring focus:ring-darkBlue focus:bg-darkBlue bg-mediumBlue md:w-32 w-full text-white p-2 px-3 text-sm rounded-md '
+            className=' dark:bg-black focus:outline-none hidden md:block focus:ring focus:ring-darkBlue focus:bg-darkBlue bg-mediumBlue md:w-32 w-full text-white p-2 px-3 text-sm rounded-md '
           >
             {loading ? 'Updating' : 'Update'}
           </button>

@@ -20,7 +20,7 @@ export default function RootLayout({ children }) {
 
   return (
     <html lang="en">
-      <body className=' bg-backgroundGray min-h-screen'>
+      <body className=' bg-backgroundGray dark:bg-backgroundDark min-h-screen'>
         <AppBar />
         {children}
 

@@ -5,14 +5,12 @@ const privacypolicy = () => {
     year: 'numeric'
   })
   return (
-    <div className='flex flex-col items-center justify-center p-4 m-4 h-auto min-h-screen bg-gray-50'>
-      <div className='w-full max-w-4xl p-8 bg-white rounded-lg shadow-md'>
+    <div className='flex flex-col items-center justify-center p-4 h-auto min-h-screen bg-backgroundGray dark:bg-backgroundDark'>
+      <div className='w-full max-w-4xl p-8 bg-white dark:bg-lightDark rounded-lg shadow-md'>
         <h1 className='text-2xl font-bold text-center text-gray-800 mb-4'>
           Privacy Policy for Zsharenet
         </h1>
-        <p className='text-center text-gray-600 mb-6'>
-          Last updated: [{date}]
-        </p>
+        <p className='text-center text-gray-600 mb-6'>Last updated: [{date}]</p>
         <section className='mb-6'>
           <h2 className='text-xl font-semibold text-gray-800 mb-2'>
             Introduction

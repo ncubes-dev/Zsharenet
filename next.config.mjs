@@ -18,6 +18,7 @@ const nextConfig = {
   images: {
     domains: ["firebasestorage.googleapis.com"]
   },
+  darkMode: 'media',
   webpack: (config) => {
     config.resolve.alias.canvas = false;
 

@@ -67,7 +67,7 @@ const CommunityCard = props => {
 
   return (
     <div className='flex mx-auto bg-transparent my-1 w-full md:w-1/2  text-center'>
-      <div className='flex flex-col bg-white shadow-lg rounded-lg m-5'>
+      <div className='flex flex-col bg-white dark:bg-lightDark shadow-lg rounded-lg m-5'>
         <div className='relative'>
           {user?.uid === admin ? (
             <div className=' p-2 px-3 absolute top-0 right-0 flex flex-row'>

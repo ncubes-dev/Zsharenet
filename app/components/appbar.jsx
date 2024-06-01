@@ -13,18 +13,31 @@ const AppBar = () => {
   function handleClick () {
     setIsToggled(!isToggled)
   }
+  const handleBackClick = () => {
+    window.history.back()
+  }
 
   return (
     <div className=' bg-mediumBlue relative z-10 mx-auto justify-center '>
       <div className='container items-center mx-auto flex flex-row justify-between p-3'>
-        <Image
-          height={100}
-          width={200}
-          src={'/icon2.svg'}
-          className='-my-5 '
-          layout='fixed'
-        />
-
+        <div className='flex flex-row'>
+          <Image
+            height={30}
+            width={30}
+            onClick={handleBackClick}
+            className='bg-veryLightBlue m-3 rounded-md hidden md:block'
+            src={'/arrow.png'}
+            alt={'back'}
+          />
+          <Image
+            height={100}
+            width={200}
+            src={'/icon2.svg'}
+            className='-my-5 block'
+            layout='fixed'
+            alt={'logo'}
+          />
+        </div>
         <div className='flex flex-row space-x-1 items-center'>
           <button onClick={handleClick} className='block p-2 px-3 '>
             <Image
