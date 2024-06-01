@@ -105,7 +105,7 @@ const CommunityCard = props => {
             height={500}
             className='rounded-t-lg'
           />
-          <p className=' font-normal text-black p-2'>
+          <p className=' font-normal  text-black dark:text-white p-2'>
             {props.data.description}
           </p>
           <div className='flex flex-col w-full '>
@@ -119,7 +119,7 @@ const CommunityCard = props => {
                     }
                   }}
                   className='focus:outline-none focus:ring focus:ring-darkBlue pl-2
-              focus:bg-darkBlue bg-green w-full text-white p-2 px-3 text-sm
+              focus:bg-darkBlue bg-green w-full  text-black dark:text-white p-2 px-3 text-sm
               rounded-md shadow-lg mb-2'
                 >
                   WhatsApp
@@ -134,7 +134,7 @@ const CommunityCard = props => {
                     }
                   }}
                   className='focus:outline-none focus:ring focus:ring-darkBlue pl-2
-              focus:bg-darkBlue bg-red w-full text-white p-2 px-3 text-sm
+              focus:bg-darkBlue bg-red w-full  text-black dark:text-white p-2 px-3 text-sm
               rounded-md shadow-lg mb-2'
                 >
                   Youtube
@@ -151,7 +151,7 @@ const CommunityCard = props => {
                     }
                   }}
                   className='focus:outline-none focus:ring focus:ring-darkBlue pl-2
-              focus:bg-darkBlue bg-black w-full text-white p-2 px-3 text-sm
+              focus:bg-darkBlue bg-black w-full  text-black dark:text-white p-2 px-3 text-sm
               rounded-md shadow-lg mb-2'
                 >
                   Website
@@ -166,7 +166,7 @@ const CommunityCard = props => {
                     }
                   }}
                   className='focus:outline-none focus:ring focus:ring-darkBlue pl-2
-              focus:bg-darkBlue bg-lightBlue w-full text-white p-2 px-3 text-sm
+              focus:bg-darkBlue bg-lightBlue w-full  text-black dark:text-white p-2 px-3 text-sm
               rounded-md shadow-lg mb-2'
                 >
                   Other

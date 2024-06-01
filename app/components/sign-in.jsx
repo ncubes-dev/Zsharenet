@@ -76,13 +76,18 @@ const SignIn = () => {
   return (
     <div className='flex flex-col w-full items-center'>
       <div className='container mx-auto justify-center p-2 mt-4 flex flex-col w-full '>
-        <form className='p-6 bg-veryLightBlue rounded-lg shadow-lg'>
+        <form className='p-6 bg-veryLightBlue dark:bg-lightDark rounded-lg shadow-lg'>
           <label className='block'>
-            <span className='block text-sm font-medium text-slate-700'>
+            <span className='block text-sm font-medium text-black dark:text-white'>
               Email
             </span>
             <Input
               text={'email'}
+              className='block w-full px-3 py-2 bg-white dark:bg-backgroundDark text-black dark:text-white border border-slate-300 rounded-md text-sm shadow-sm placeholder-slate-400
+              focus:outline-none focus:border-sky-500 focus:ring-1 focus:ring-sky-500
+              disabled:bg-slate-50 disabled:text-slate-500 disabled:border-slate-200 disabled:shadow-none
+              invalid:border-pink-500 invalid:text-pink-600
+              focus:invalid:border-pink-500 focus:invalid:ring-pink-500'
               placeholder={'example@gmail.com'}
               onChange={emailChange}
               value={email}
@@ -90,7 +95,7 @@ const SignIn = () => {
             {emailError && <p className='text-red'>{emailError}</p>}
           </label>
           <label className='block'>
-            <span className='block text-sm font-medium text-slate-700'>
+            <span className='block text-sm font-medium text-black dark:text-white'>
               Password
             </span>
             <input
@@ -99,7 +104,7 @@ const SignIn = () => {
               type='password'
               autoComplete='current-password'
               required
-              className='mt-1 h-auto block w-full px-3 py-2 bg-white border border-slate-300 rounded-md text-sm shadow-sm placeholder-slate-400
+              className='mt-1 h-auto block w-full px-3 py-2 bg-white dark:bg-backgroundDark text-black dark:text-white border border-slate-300 rounded-md text-sm shadow-sm placeholder-slate-400
               focus:outline-none focus:border-sky-500 focus:ring-1 focus:ring-sky-500
               disabled:bg-slate-50 disabled:text-slate-500 disabled:border-slate-200 disabled:shadow-none
               invalid:border-pink-500 invalid:text-pink-600
@@ -114,7 +119,7 @@ const SignIn = () => {
           <button
             type='button'
             onClick={handleLoginOrSignIn}
-            className='text-white  dark:bg-black mt-3 h-auto block w-full px-3 py-2 border border-slate-300 rounded-md text-sm shadow-sm bg-mediumBlue focus:bg-darkBlue'
+            className='text-white  dark:bg-black mt-3 h-auto block w-full px-3 py-2  rounded-md text-sm shadow-sm bg-mediumBlue focus:bg-darkBlue'
           >
             {!loading ? 'SignIn' : 'Loading'}
           </button>

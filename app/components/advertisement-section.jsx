@@ -167,7 +167,7 @@ const AdvertisementSection = () => {
               type='file'
               accept='image/*'
               onChange={handleImageChange}
-              className='w-full  p-2'
+              className='w-full  p-2  text-black dark:text-white'
             />
             {progress > 0 && (
               <progress value={progress} max={'100'} className='m-2'></progress>

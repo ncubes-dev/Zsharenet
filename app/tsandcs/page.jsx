@@ -7,38 +7,40 @@ const tsandcs = () => {
   return (
     <div className='flex flex-col items-center justify-center p-4 h-auto min-h-screen bg-backgroundGray dark:bg-backgroundDark'>
       <div className='w-full max-w-4xl p-8 bg-white dark:bg-lightDark rounded-lg shadow-md'>
-        <h1 className='text-2xl font-bold text-center text-gray-800 mb-4'>
+        <h1 className='text-2xl font-bold text-center text-black dark:text-white mb-4'>
           Terms and Conditions for Zsharenet
         </h1>
-        <p className='text-center text-gray-600 mb-6'>Last updated: [{date}]</p>
+        <p className='text-center text-black dark:text-white mb-6'>
+          Last updated: [{date}]
+        </p>
         <section className='mb-6'>
-          <h2 className='text-xl font-semibold text-gray-800 mb-2'>
+          <h2 className='text-xl font-semibold text-black dark:text-white mb-2'>
             Introduction
           </h2>
-          <p className='text-gray-600'>
+          <p className='text-black dark:text-white'>
             These Website Standard Terms and Conditions written on this webpage
             shall manage your use of our website.
           </p>
         </section>
         <section className='mb-6'>
-          <h2 className='text-xl font-semibold text-gray-800 mb-2'>
+          <h2 className='text-xl font-semibold text-black dark:text-white mb-2'>
             Intellectual Property Rights
           </h2>
-          <p className='text-gray-600'>
+          <p className='text-black dark:text-white'>
             Other than the content you own, under these Terms, Zsharenet and/or
             its licensors own all the intellectual property rights and materials
             contained in this Website.
           </p>
         </section>
         <section className='mb-6'>
-          <h2 className='text-xl font-semibold text-gray-800 mb-2'>
+          <h2 className='text-xl font-semibold text-black dark:text-white mb-2'>
             Restrictions
           </h2>
           <div className='bg-gray-100 p-6 rounded-lg'>
-            <p className='text-gray-600 mb-3'>
+            <p className='text-black dark:text-white mb-3'>
               You are specifically restricted from all of the following:
             </p>
-            <ul className='list-disc pl-5 text-gray-600'>
+            <ul className='list-disc pl-5 text-black dark:text-white'>
               <li>Publishing any Website material in any other media.</li>
               <li>
                 Selling, sublicensing and/or otherwise commercializing any
@@ -69,49 +71,49 @@ const tsandcs = () => {
           </div>
         </section>
         <section className='mb-6'>
-          <h2 className='text-xl font-semibold text-gray-800 mb-2'>
+          <h2 className='text-xl font-semibold text-black dark:text-white mb-2'>
             Termination
           </h2>
-          <p className='text-gray-600'>
+          <p className='text-black dark:text-white'>
             Zsharenet may terminate your access to the Site, without cause or
             notice, which may result in the forfeiture and destruction of all
             information associated with your account.
           </p>
         </section>
         <section className='mb-6'>
-          <h2 className='text-xl font-semibold text-gray-800 mb-2'>
+          <h2 className='text-xl font-semibold text-black dark:text-white mb-2'>
             Links To Other Sites
           </h2>
-          <p className='text-gray-600'>
+          <p className='text-black dark:text-white'>
             Our Site may contain links to third-party sites that are not owned
             or controlled by Zsharenet.
           </p>
         </section>
         <section className='mb-6'>
-          <h2 className='text-xl font-semibold text-gray-800 mb-2'>
+          <h2 className='text-xl font-semibold text-black dark:text-white mb-2'>
             Governing Law
           </h2>
-          <p className='text-gray-600'>
+          <p className='text-black dark:text-white'>
             This Agreement shall be governed and construed in accordance with
             the laws of [Insert Country], without regard to its conflict of law
             provisions.
           </p>
         </section>
         <section className='mb-6'>
-          <h2 className='text-xl font-semibold text-gray-800 mb-2'>
+          <h2 className='text-xl font-semibold text-black dark:text-white mb-2'>
             Changes To This Agreement
           </h2>
-          <p className='text-gray-600'>
+          <p className='text-black dark:text-white'>
             We reserve the right to modify these Terms at any time. Your
             continued use of the Site will be considered acceptance of our
             updated terms.
           </p>
         </section>
         <section>
-          <h2 className='text-xl font-semibold text-gray-800 mb-2'>
+          <h2 className='text-xl font-semibold text-black dark:text-white mb-2'>
             Contact Information
           </h2>
-          <p className='text-gray-600'>
+          <p className='text-black dark:text-white'>
             If you have any questions about these Terms, please contact us via
             email.
           </p>

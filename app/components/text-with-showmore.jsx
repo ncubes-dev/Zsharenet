@@ -4,7 +4,7 @@ const TextWithShowMore = () => {
   const [showMore, setShowMore] = useState(false)
 
   return (
-    <div className='container mx-auto my-4 p-4 bg-white shadow-lg rounded-lg'>
+    <div className='container mx-auto my-4 p-4 bg-white dark:bg-backgroundDark text-black dark:text-white shadow-lg rounded-lg'>
       <h2 className='font-bold text-sm mb-4 text-gray-800'>
         WhatsApp Link Expiration Guidelines
       </h2>
@@ -35,7 +35,7 @@ const TextWithShowMore = () => {
         {showMore ? 'Show Less' : 'Show More'}
       </button>
       {showMore && (
-        <p className='text-gray-600 italic mt-4 text-sm '>
+        <p className='text-black dark:text-white italic mt-4 text-sm '>
           Keep in mind that these expiration times are subject to change, and
           WhatsApp may update them without notice.
         </p>

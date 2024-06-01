@@ -25,7 +25,7 @@ export const RecentActivity = () => {
     recent !== null && (
       <div>
         <div className='container items-center mx-auto flex flex-row p-3 justify-between'>
-          <h1 className=' font-extrabold text-xl md:text-2xl text-darkBlue'>
+          <h1 className=' font-extrabold text-xl md:text-2xl  text-black dark:text-white'>
             Favourite
           </h1>
         </div>

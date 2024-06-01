@@ -13,7 +13,7 @@ export const PlatformCard = props => {
               height={40}
               className='p-1'
             />
-            <h1 className=' hidden md:block font-bold text-mediumBlue text-lg pr-2 '>
+            <h1 className=' hidden md:block font-bold  text-black dark:text-white text-lg pr-2 '>
               {props.data.platform}
             </h1>
           </div>

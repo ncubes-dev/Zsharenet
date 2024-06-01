@@ -1,9 +1,7 @@
 /*
-fix help page text and the link to be shared and restrategize on the selling point
-fixe all text pages
+
 use the suspense
 handle offline and caching
-night mode
 robut nav and nav delays, error and loading
 
  */

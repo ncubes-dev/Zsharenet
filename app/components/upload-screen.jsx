@@ -150,17 +150,17 @@ const UploadScreen = () => {
     <div className='flex flex-col w-full items-center'>
       <div className='flex flex-col mt-2 pt-5  md:mt-10'>
         <div className='flex flex-col justify-center'>
-          <h1 className='font-bold text-mediumBlue text-3xl md:text-4xl text-center '>
+          <h1 className='font-bold text-black dark:text-white text-3xl md:text-4xl text-center '>
             Community details
           </h1>
-          <p className='px-3 text-darkBlue '>
+          <p className='px-3 text-black dark:text-white '>
             Here you enter the details of the community you want to upload.
             Links are are links to you cummunity either{' '}
-            <span className='text-darkBlue font-semibold'>
+            <span className='text-black dark:text-white font-semibold'>
               e.g whatsapp group link.
             </span>{' '}
             for other you can add a link for any platform like{' '}
-            <span className='text-darkBlue font-semibold'>
+            <span className='text-black dark:text-white font-semibold'>
               {' '}
               instagram or facebook any other{' '}
             </span>
@@ -168,15 +168,15 @@ const UploadScreen = () => {
         </div>
       </div>
       <div className='container mx-auto justify-center p-2 mt-4 flex flex-col w-full '>
-        <form className='p-6 bg-veryLightBlue rounded-lg shadow-lg'>
+        <form className='p-6 bg-veryLightBlue dark:bg-lightDark rounded-lg shadow-lg'>
           <label class='block '>
             <div className='w-full flex flex-col md:flex-row md:justify-between md:items-center '>
-              <span class='pl-1 font-bold text-mediumBlue text-xl'>
+              <span class='pl-1 font-bold text-black dark:text-white text-xl'>
                 Profile Picture
               </span>
               <div className='w-full md:pl-12 '>
                 <input
-                  className='w-full'
+                  className='w-full text-black dark:text-white'
                   type='file'
                   onChange={handleProfilePdfChange}
                   accept='image/*'
@@ -193,7 +193,7 @@ const UploadScreen = () => {
           </label>
           <label class='block '>
             <div className='w-full flex flex-col md:flex-row md:justify-between md:items-center '>
-              <span class='pl-1 font-bold text-mediumBlue text-xl'>
+              <span class='pl-1 font-bold text-black dark:text-white text-xl'>
                 Category
               </span>
               <Selector
@@ -207,7 +207,7 @@ const UploadScreen = () => {
           </label>
           <label class='block '>
             <div className='w-full flex flex-col md:flex-row md:justify-between md:items-center '>
-              <span class='pl-1 font-bold text-mediumBlue text-xl'>
+              <span class='pl-1 font-bold text-black dark:text-white text-xl'>
                 Description
               </span>
               <textarea
@@ -220,7 +220,7 @@ const UploadScreen = () => {
                 placeholder={
                   'Lorem ipsum dolor, sit amet consectetur adipisicing elit.'
                 }
-                className='md:ml-14 mt-1 h-auto block w-full px-3 py-2 bg-white border border-slate-300 rounded-md text-sm shadow-sm placeholder-slate-400
+                className='md:ml-14 mt-1 h-auto block w-full px-3 py-2 bg-white dark:bg-backgroundDark text-black dark:text-white border border-slate-300 rounded-md text-sm shadow-sm placeholder-slate-400
         focus:outline-none focus:border-sky-500 focus:ring-1 focus:ring-sky-500
         disabled:bg-slate-50 disabled:text-slate-500 disabled:border-slate-200 disabled:shadow-none
         invalid:border-pink-500 invalid:text-pink-600
@@ -230,7 +230,7 @@ const UploadScreen = () => {
           </label>
           <label class='block '>
             <div className='w-full flex flex-col md:flex-row md:justify-between md:items-center '>
-              <span class='pl-1 font-bold text-mediumBlue text-xl'>
+              <span class='pl-1 font-bold text-black dark:text-white text-xl'>
                 WhatsApp group/channel link
                 <TextWithShowMore />
               </span>
@@ -245,7 +245,7 @@ const UploadScreen = () => {
           </label>
           <label class='block '>
             <div className='w-full flex flex-col md:flex-row md:justify-between md:items-center '>
-              <span class='pl-1 font-bold text-mediumBlue text-xl'>
+              <span class='pl-1 font-bold text-black dark:text-white text-xl'>
                 Website link
               </span>
               <Input
@@ -258,7 +258,7 @@ const UploadScreen = () => {
           </label>
           <label class='block '>
             <div className='w-full flex flex-col md:flex-row md:justify-between md:items-center '>
-              <span class='pl-1 font-bold text-mediumBlue text-xl'>
+              <span class='pl-1 font-bold text-black dark:text-white text-xl'>
                 YouTube channel link
               </span>
               <Input
@@ -271,7 +271,7 @@ const UploadScreen = () => {
           </label>
           <label class='block '>
             <div className='w-full flex flex-col md:flex-row md:justify-between md:items-center '>
-              <span class='pl-1 font-bold text-mediumBlue text-xl'>
+              <span class='pl-1 font-bold text-black dark:text-white text-xl'>
                 Other community link
               </span>
               <Input

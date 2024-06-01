@@ -8,14 +8,14 @@ export const Activities = props => {
   return (
     <div>
       <div className='container items-center mx-auto flex flex-row p-3 justify-between'>
-        <h1 className=' font-extrabold text-xl md:text-2xl text-darkBlue'>
+        <h1 className=' font-extrabold text-xl md:text-2xl  text-black dark:text-white'>
           Add Community
         </h1>
       </div>
       <div className='flex flex-wrap container mx-auto w-full  '>
-        <p className='px-3 text-darkBlue font-semibold '>
+        <p className='px-3  text-black dark:text-white font-semibold '>
           Here you can add your community{' '}
-          <span className='text-darkBlue italic font-normal'>
+          <span className=' text-black dark:text-white italic font-normal'>
             (whatsapp group, whatsapp channel, telegram group, telegram channel,
             youtube channel, websites, apps and other platform you want to drive
             people to )
@@ -30,14 +30,16 @@ export const Activities = props => {
         </Link>
       </div>
       <div className='container items-center mx-auto flex flex-row p-3 justify-between'>
-        <h1 className=' font-extrabold text-xl md:text-2xl text-darkBlue'>
+        <h1 className=' font-extrabold text-xl md:text-2xl  text-black dark:text-white'>
           Categories
         </h1>
       </div>
       <div className='flex flex-wrap container mx-auto w-full  '>
-        <p className='px-3 text-darkBlue font-normal '>
+        <p className='px-3  text-black dark:text-white font-normal '>
           Here you can find a various communities from different{' '}
-          <span className='text-darkBlue italic font-semibold'>categories</span>
+          <span className=' text-black dark:text-white italic font-semibold'>
+            categories
+          </span>
         </p>
         {CATEGORIES.map((category, index) => {
           return (

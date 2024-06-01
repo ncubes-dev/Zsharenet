@@ -94,13 +94,13 @@ const Feedback = () => {
   }, [])
 
   return (
-    <div className='flex flex-col w-full '>
+    <div className='flex flex-col w-full bg-backgroundGray dark:bg-lightDark m-4 '>
       {user?.uid === admin ? (
         <div>
           {firebaseFeedbacks.map((f, i) => {
             return (
-              <ul className='divide-y divide-gray-200'>
-                <li className='bg-white p-2'>
+              <ul className='divide-y divide-gray-200 bg-white dark:bg-lightDark'>
+                <li className='bg-white p-2  dark:bg-lightDark text-black dark:text-white'>
                   <h1 className='text-start w-full'>{f.message}</h1>
                   <h1>{timestampToHumanReadable(f.timeStamp)}</h1>
                 </li>
@@ -112,18 +112,18 @@ const Feedback = () => {
         <div>
           <div className='flex flex-col mt-2 pt-5  md:mt-10'>
             <div className='flex justify-center'>
-              <span className='font-thin pr-3 text-3xl md:text-4xl text-center '>
+              <span className='font-thin pr-3 text-3xl md:text-4xl text-center text-black dark:text-white'>
                 Send us
               </span>
-              <span className='font-bold text-mediumBlue text-3xl md:text-4xl text-center '>
+              <span className='font-bold  text-black dark:text-white text-3xl md:text-4xl text-center '>
                 FeedBack
               </span>
             </div>
           </div>
           <div className='container mx-auto justify-center p-2 mt-4 flex flex-col w-full '>
-            <form className='p-6 bg-veryLightBlue rounded-lg shadow-lg'>
+            <form className='p-6 bg-veryLightBlue dark:bg-lightDark rounded-lg shadow-lg'>
               <label class='block'>
-                <span class='block text-sm font-medium text-slate-700'>
+                <span class='block text-sm font-medium text-black dark:text-white'>
                   FeedBack
                 </span>
                 <textarea
@@ -134,7 +134,7 @@ const Feedback = () => {
                   placeholder={
                     'Lorem ipsum dolor, sit amet consectetur adipisicing elit.'
                   }
-                  className='mt-1 h-auto block w-full px-3 py-2 bg-white border border-slate-300 rounded-md text-sm shadow-sm placeholder-slate-400
+                  className=' text-black dark:text-white mt-1 h-auto block w-full px-3 py-2 bg-white dark:bg-backgroundDark border border-slate-300 rounded-md text-sm shadow-sm placeholder-slate-400
       focus:outline-none focus:border-sky-500 focus:ring-1 focus:ring-sky-500
       disabled:bg-slate-50 disabled:text-slate-500 disabled:border-slate-200 disabled:shadow-none
       invalid:border-pink-500 invalid:text-pink-600
