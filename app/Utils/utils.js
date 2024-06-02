@@ -5,6 +5,7 @@ export const FEEDBACK = "feedback"
 export const RECENT_ACTIVITY = "recentActivity"
 export const CURRENT_AD = "currentad"
 export const PREVIOUS_AD = "previousad"
+export const IS_DARK_MODE = "mode"
 
 export const platforms = [
   {

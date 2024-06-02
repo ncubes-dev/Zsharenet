@@ -1,11 +1,9 @@
 /*
 
-use the suspense
-fix category layout
+
 handle offline and caching
-robust nav and nav delays, error and loading
-
-
+robust nav and nav delays
+persist the darkmode
  */
 
  /*Building an app that facilitates the hosting of communities and channels is a fantastic idea, especially in today's digital landscape where users are seeking more authentic spaces to connect and share interests. Here are some key features and considerations you might want to include in your app:
