@@ -94,7 +94,7 @@ const Feedback = () => {
   }, [])
 
   return (
-    <div className='flex flex-col w-full bg-backgroundGray dark:bg-lightDark m-4 '>
+    <div className='flex flex-col w-full bg-backgroundGray dark:bg-lightDark'>
       {user?.uid === admin ? (
         <div>
           {firebaseFeedbacks.map((f, i) => {
