@@ -39,7 +39,7 @@ const AppBar = props => {
           />
         </div>
         <div className='flex flex-row space-x-1 items-center'>
-          {/* <h1 className='text-white'>Update</h1> */}
+          <h1 className='text-white'>Update</h1>
           <button onClick={props.toggleDarkMode} className='block p-2 px-3 '>
             <Image
               src={props.darkMode ? '/sun.png' : '/moon.png'}
