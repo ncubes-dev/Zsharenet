@@ -9,10 +9,11 @@ export const viewport = {
   themeColor: "#FFFFFF",
 };
 export default function RootLayout({ children }) {
-  const [darkMode, setDarkMode] = useState(() => {
-    const savedMode = localStorage.getItem('IS_DARK_MODE');
-    return savedMode === "true" ? true : false;
-  });
+  const [darkMode, setDarkMode] = useState(null)
+  //   () => {
+  //   const savedMode = localStorage.getItem('IS_DARK_MODE');
+  //   return savedMode === "true" ? true : false;
+  // });
 
   const toggleDarkMode = () => {
     if (typeof window !== 'undefined') {
@@ -22,7 +23,9 @@ export default function RootLayout({ children }) {
 
   useEffect(() => {
     if (typeof window !== 'undefined') {
-      localStorage.setItem('IS_DARK_MODE', darkMode ? "true" : "false");
+      if (darkMode !== null) {
+        localStorage.setItem('IS_DARK_MODE', darkMode ? "true" : "false");
+      }
     }
   }, [darkMode]);
 
@@ -36,6 +39,7 @@ export default function RootLayout({ children }) {
       }
     }
   }, []);
+
 
   return (
     <html lang="en" class={`${darkMode && 'dark'}`}>
