@@ -17,13 +17,6 @@ const AppBar = props => {
     window.history.back()
   }
 
-  window.addEventListener('popstate', function (event) {
-    if (isToggled) {
-      event.preventDefault()
-      setIsToggled(false)
-    }
-  })
-
   return (
     <div className=' bg-mediumBlue relative z-10 mx-auto justify-center '>
       <div className='container items-center mx-auto flex flex-row justify-between p-3'>
