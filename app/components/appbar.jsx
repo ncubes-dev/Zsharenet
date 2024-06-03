@@ -1,7 +1,7 @@
 'use client'
 import Image from 'next/image'
 import Link from 'next/link'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { menuItems } from '../Utils/utils'
 import { signOut } from 'firebase/auth'
 import { Auth } from '../firebase/config'
@@ -10,13 +10,19 @@ import { useAuthState } from 'react-firebase-hooks/auth'
 const AppBar = props => {
   const [user] = useAuthState(Auth)
   const [isToggled, setIsToggled] = useState(false)
-
   function handleClick () {
     setIsToggled(!isToggled)
   }
   const handleBackClick = () => {
     window.history.back()
   }
+
+  window.addEventListener('popstate', function (event) {
+    if (isToggled) {
+      event.preventDefault()
+      setIsToggled(false)
+    }
+  })
 
   return (
     <div className=' bg-mediumBlue relative z-10 mx-auto justify-center '>
@@ -40,7 +46,7 @@ const AppBar = props => {
           />
         </div>
         <div className='flex flex-row space-x-1 items-center'>
-          <h1 className='text-white'>Update</h1>
+          {/* <h1 className='text-white'>Update</h1> */}
           <button onClick={props.toggleDarkMode} className='block p-2 px-3 '>
             <Image
               src={props.darkMode ? '/sun.png' : '/moon.png'}
@@ -90,10 +96,6 @@ const AppBar = props => {
                 <div className='text-center'>Sign Out</div>
               </div>
             )}
-          </div>
-          <div className='mb-10'>
-            <span className='text-white font-thin'>Disclaimer: </span>
-            <span className='text-white'>This not official Zimsec app</span>
           </div>
         </div>
       )}
